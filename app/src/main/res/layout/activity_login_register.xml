@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/bg2">
+
+    <TextView
+        android:id="@+id/logoAvt"
+        android:layout_width="193dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="168dp"
+        android:layout_marginEnd="110dp"
+        android:fontFamily="@font/aclonica"
+        android:text="2002"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText,MissingConstraints" />
+
+    <LinearLayout
+        android:layout_width="316dp"
+        android:layout_height="214dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="50dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoAvt"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="178dp"
+            android:layout_height="52dp"
+            android:backgroundTint="#F6AB66"
+            android:text="Login"
+            app:cornerRadius="60dp"
+            tools:ignore="HardcodedText,MissingConstraints" />
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="177dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#F6AB66"
+            android:text="Register"
+            tools:ignore="HardcodedText,MissingConstraints" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="177dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#F6AB66"
+            android:text="Sign in with Google"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/loginGuest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Login with Guests account"
+            android:textColor="#5E7BFB"
+            android:textSize="12sp"
+            tools:ignore="HardcodedText,MissingConstraints,SpUsage" />
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "136936521853",
+    "firebase_url": "https://fir-9c49c-default-rtdb.firebaseio.com",
+    "project_id": "fir-9c49c",
+    "storage_bucket": "fir-9c49c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:136936521853:android:d8155df5229fe5ebcd7114",
+        "android_client_info": {
+          "package_name": "com.example.tradeup"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYV092HDe5EzTOGXBCNqoMbqT8CQM-wBU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
