@@ -42,7 +42,7 @@
             android:backgroundTint="#F6AB66"
             android:text="Login"
             app:cornerRadius="60dp"
-            tools:ignore="HardcodedText,MissingConstraints" />
+            tools:ignore="DuplicateIds,HardcodedText,MissingConstraints" />
 
         <Button
             android:id="@+id/btnRegister"
@@ -54,7 +54,7 @@
             tools:ignore="HardcodedText,MissingConstraints" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnSign_in_GG"
             android:layout_width="177dp"
             android:layout_height="49dp"
             android:layout_marginTop="8dp"
@@ -71,7 +71,6 @@
             android:textColor="#5E7BFB"
             android:textSize="12sp"
             tools:ignore="HardcodedText,MissingConstraints,SpUsage" />
-
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
