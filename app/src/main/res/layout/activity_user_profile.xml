@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    >
+
+    <ImageView
+        android:id="@+id/avatar"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="111dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        tools:ignore="ContentDescription,RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="20dp"
+        android:textColorHint="#181717"
+        android:textSize="18dp"
+        tools:ignore="SpUsage" />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:textColorHint="#181717"
+        android:textSize="18dp"
+        android:layout_marginBottom="20dp"
+        tools:ignore="SpUsage" />
+
+    <TextView
+        android:id="@+id/bio"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="20dp"
+        android:textColorHint="#181717"
+        android:textSize="18dp"
+        tools:ignore="SpUsage"/>
+
+    <Button
+        android:id="@+id/btnEdit"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:backgroundTint="#F6AB66"
+        android:layout_marginBottom="20dp"
+        android:text="Cập nhật thông tin"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:backgroundTint="#F6AB66"
+        android:layout_marginBottom="20dp"
+        android:text="đăng xuất"
+        tools:ignore="HardcodedText" />
+
+</LinearLayout>

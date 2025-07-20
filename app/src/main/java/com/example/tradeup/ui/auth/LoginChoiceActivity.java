@@ -27,11 +27,13 @@ public class LoginChoiceActivity extends AppCompatActivity {
         });
 
         btnRegister.setOnClickListener(v -> {
-            // TODO: start RegisterActivity
+            Intent intent = new Intent(this, RegisterActivity.class);
+            startActivity(intent);
         });
 
         btnGoogle.setOnClickListener(v -> {
-            // TODO: start GoogleSignIn
+            Intent intent = new Intent(this, LoginGoogleActivity.class);
+            startActivity(intent);
         });
 
         guest.setOnClickListener(v -> {

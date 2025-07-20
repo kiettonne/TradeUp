@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C7C3C3">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/avatarImage"
+            android:layout_width="214dp"
+            android:layout_height="213dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/avatar_border"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_foreground"
+            tools:ignore="ContentDescription" />
+
+        <EditText
+            android:id="@+id/editName"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:paddingStart="9dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/input_field_bg"
+            android:hint="User Name"
+            tools:ignore="Autofill,HardcodedText,RtlSymmetry,TextFields" />
+
+        <EditText
+            android:id="@+id/editBio"
+            android:layout_width="377dp"
+            android:layout_height="203dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/input_field_bg"
+            android:hint="Biography"
+            android:paddingStart="9dp"
+            tools:ignore="Autofill,HardcodedText,RtlSymmetry,TextFields" />
+
+        <EditText
+            android:id="@+id/editContact"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginBottom="20dp"
+            android:paddingStart="9dp"
+            android:background="@drawable/input_field_bg"
+            android:hint="Contact information"
+            tools:ignore="Autofill,HardcodedText,RtlSymmetry,TextFields" />
+
+        <Button
+            android:id="@+id/btnUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#F6AB66"
+            android:textSize="20dp"
+            android:text="Upgrade"
+            tools:ignore="HardcodedText,SpUsage" />
+
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FF5555"
+            android:textSize="20dp"
+            android:text="Delete Account"
+            tools:ignore="HardcodedText,SpUsage" />
+    </LinearLayout>
+</ScrollView>

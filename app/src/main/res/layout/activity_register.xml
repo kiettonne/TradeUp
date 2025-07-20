@@ -89,8 +89,8 @@
                 android:id="@+id/btnSignUp"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
+                android:backgroundTint="#F6AB66"
                 android:text="Sign Up"
-                android:backgroundTint="@android:color/black"
                 android:textColor="@android:color/white"
                 tools:ignore="HardcodedText" />
 
@@ -98,12 +98,12 @@
                 android:id="@+id/tvLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Already have an account? Sign In"
-                android:textColor="#000000"
-                android:textSize="14sp"
-                android:textStyle="bold"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
+                android:text="Already have an account? Sign In"
+                android:textColor="#A09B9B"
+                android:textSize="14sp"
+                android:textStyle="bold"
                 tools:ignore="HardcodedText" />
         </LinearLayout>
     </LinearLayout>

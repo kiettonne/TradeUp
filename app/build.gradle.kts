@@ -1,6 +1,7 @@
 plugins {
-    alias(libs.plugins.android.application)
-    id ("com.google.gms.google-services")
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -37,14 +38,18 @@ android {
 dependencies {
 //import glide
     implementation ("com.github.bumptech.glide:glide:4.16.0")
+    implementation(libs.firebase.database)
+    implementation(libs.firebase.storage)
     annotationProcessor ("com.github.bumptech.glide:compiler:4.16.0")
 //import firebase
     implementation(platform("com.google.firebase:firebase-bom:33.15.0"))
     implementation("com.google.firebase:firebase-analytics")
+    implementation ("com.google.firebase:firebase-auth")
 //connect login with Google
     implementation ("androidx.credentials:credentials:<latest version>")
     implementation ("androidx.credentials:credentials-play-services-auth:<latest version>")
     implementation ("com.google.android.libraries.identity.googleid:googleid:<latest version>")
+    implementation ("com.google.android.gms:play-services-auth:<latest version>")
 
     implementation(libs.appcompat)
     implementation(libs.material)

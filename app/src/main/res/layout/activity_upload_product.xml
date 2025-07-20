@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/productImage"
+            android:layout_width="194dp"
+            android:layout_height="184dp"
+            android:layout_marginBottom="10dp"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_launcher_foreground"
+            tools:ignore="ContentDescription" />
+
+        <EditText
+            android:id="@+id/editTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="12dp"
+            android:layout_marginBottom="10dp"
+            android:hint="Tên sản phẩm"
+            tools:ignore="Autofill,HardcodedText,TextFields" />
+        <EditText
+            android:id="@+id/editPrice"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="12dp"
+            android:layout_marginBottom="10dp"
+            android:hint="Giá"
+            tools:ignore="Autofill,HardcodedText,TextFields"/>
+        <EditText
+            android:id="@+id/editDesc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="12dp"
+            android:layout_marginBottom="10dp"
+            android:hint="Mô tả"
+            tools:ignore="Autofill,HardcodedText,TextFields"/>
+        <EditText
+            android:id="@+id/editCategory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="12dp"
+            android:layout_marginBottom="10dp"
+            android:hint="Danh mục"
+            tools:ignore="Autofill,HardcodedText,TextFields" />
+
+        <Spinner
+            android:id="@+id/spinnerCondition"
+            android:layout_width="379dp"
+            android:layout_height="49dp"
+            android:layout_marginBottom="10dp"/>
+
+        <EditText
+            android:id="@+id/editLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="Địa điểm (có thể lấy từ GPS)"
+            android:padding="12dp"
+            tools:ignore="Autofill,HardcodedText,TextFields" />
+
+        <MultiAutoCompleteTextView
+            android:id="@+id/editTags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="Thẻ (ví dụ: Jordan, limited, sale...)"
+            android:padding="12dp"
+            android:inputType="text"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/btnUpload"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="20dp"
+            android:backgroundTint="#F6AB66"
+            android:text="Đăng sản phẩm"
+            tools:ignore="HardcodedText,SpUsage" />
+
+    </LinearLayout>
+</ScrollView>

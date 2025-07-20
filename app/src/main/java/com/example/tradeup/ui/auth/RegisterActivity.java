@@ -7,6 +7,7 @@ import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,15 +16,17 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.tradeup.R;
-import com.example.tradeup.ui.main.MainActivity;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    EditText etFullName, etEmail, etPassword, etConfirmPassword;
-    Button btnSignUp;
-    TextView tvLogin;
-    FirebaseAuth mAuth;
+    private EditText etFullName, etEmail, etPassword, etConfirmPassword;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,19 +37,18 @@ public class RegisterActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
         etConfirmPassword = findViewById(R.id.etConfirmPassword);
-        btnSignUp = findViewById(R.id.btnSignUp);
-        tvLogin = findViewById(R.id.tvLogin);
+        Button btnSignUp = findViewById(R.id.btnSignUp);
+        TextView tvLogin = findViewById(R.id.tvLogin);
+        String text = "Already have an account? Sign In";
 
         mAuth = FirebaseAuth.getInstance();
 
         btnSignUp.setOnClickListener(v -> registerUser());
+
         tvLogin.setOnClickListener(v -> {
             startActivity(new Intent(this, LoginActivity.class));
             finish();
         });
-
-        TextView tvLogin = findViewById(R.id.tvLogin);
-        String text = "Already have an account? Sign In";
 
         SpannableString ss = new SpannableString(text);
 
@@ -75,6 +77,17 @@ public class RegisterActivity extends AppCompatActivity {
             return;
         }
 
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            Toast.makeText(this, "Email không hợp lệ", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (pass.length() < 6) {
+            etPassword.setError("Mật khẩu tối thiểu 6 ký tự");
+            etPassword.requestFocus();
+            return;
+        }
+
         if (!pass.equals(confirm)) {
             Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show();
             return;
@@ -82,13 +95,27 @@ public class RegisterActivity extends AppCompatActivity {
 
         mAuth.createUserWithEmailAndPassword(email, pass)
                 .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        Toast.makeText(this, "Registered successfully", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(this, MainActivity.class));
-                        finish();
-                    } else {
-                        Toast.makeText(this, "Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        if (user != null) {
+                            String uid = user.getUid();
+                            Map<String, Object> userMap = new HashMap<>();
+                            userMap.put("uid", uid);
+                            userMap.put("email", email);
+                            userMap.put("name", name);
+                            userMap.put("avatar", "");
+                            userMap.put("bio", "");
+
+                            FirebaseDatabase.getInstance().getReference("users")
+                                    .child(uid)
+                                    .setValue(userMap)
+                                    .addOnCompleteListener(unused -> {
+                                        user.sendEmailVerification().addOnSuccessListener(unused1 -> {
+                                            Toast.makeText(this, "Đăng ký thành công, hãy xác minh email!", Toast.LENGTH_LONG).show();
+                                            startActivity(new Intent(this, LoginActivity.class));
+                                            finish();
+                                        });
+                                    });
+                        }
+                }) .addOnFailureListener(e -> Toast.makeText(this, "Lỗi: " + e.getMessage(), Toast.LENGTH_SHORT).show());
     }
 }

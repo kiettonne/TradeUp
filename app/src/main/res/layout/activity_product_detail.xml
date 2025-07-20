@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA"
+    android:padding="16dp"
+    tools:context=".ui.product.ProductDetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:id="@+id/detailImage"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="Ảnh sản phẩm"
+            android:background="#DDD" />
+
+        <TextView
+            android:id="@+id/detailTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tiêu đề sản phẩm"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/detailPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="100.000₫"
+            android:textSize="18sp"
+            android:textColor="#FF5722"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/detailDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mô tả sản phẩm..."
+            android:textSize="16sp"
+            android:layout_marginTop="12dp"
+            android:textColor="#444" />
+
+        <TextView
+            android:id="@+id/detailLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vị trí: Hồ Chí Minh"
+            android:layout_marginTop="10dp"
+            android:textSize="15sp"
+            android:textColor="#666" />
+
+        <TextView
+            android:id="@+id/detailCondition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tình trạng: Mới"
+            android:layout_marginTop="6dp"
+            android:textSize="15sp"
+            android:textColor="#666" />
+
+        <TextView
+            android:id="@+id/detailTags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tags: điện thoại, Samsung"
+            android:layout_marginTop="6dp"
+            android:textSize="15sp"
+            android:textColor="#666" />
+
+    </LinearLayout>
+</ScrollView>

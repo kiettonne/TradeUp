@@ -10,13 +10,13 @@
 
     <ImageView
         android:id="@+id/productImage"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="380dp"
+        android:layout_height="191dp"
+        android:layout_marginBottom="4dp"
         android:layout_weight="1"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        android:layout_marginBottom="4dp"
-        tools:ignore="ContentDescription" />
+        tools:ignore="ContentDescription,InefficientWeight" />
 
     <TextView
         android:id="@+id/productTitle"
@@ -25,6 +25,15 @@
         android:textSize="16sp"
         android:textColor="#FF4500"
         android:text="Product Title"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/btnMarkSold"
+        android:layout_width="63dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#1DE9B6"
+        android:text="Đã bán"
+        android:textColor="@android:color/white"
         tools:ignore="HardcodedText" />
 
     <LinearLayout
@@ -43,11 +52,29 @@
             android:textColor="#000"
             tools:ignore="HardcodedText" />
 
+        <TextView
+            android:id="@+id/productViews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="12dp"
+            android:text="123 lượt xem"
+            tools:ignore="HardcodedText,RtlHardcoded" />
+
+        <TextView
+            android:id="@+id/productLikes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="12dp"
+            android:text="10 lượt thích"
+            tools:ignore="HardcodedText,RtlHardcoded" />
+
         <ImageView
             android:id="@+id/likeIcon"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:contentDescription="Like"
+            android:clickable="true"
+            android:focusable="true"
             android:src="@drawable/heart"
             tools:ignore="HardcodedText" />
     </LinearLayout>
