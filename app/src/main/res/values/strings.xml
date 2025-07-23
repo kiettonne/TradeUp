@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">TradeUp</string>
-    <string name="default_web_client_id">136936521853-37icgvtn22aj9fldjlsf3n5fbonpc7ht.apps.googleusercontent.com</string>
+    <string name="default_web_client_id">985095044874-3f559kq73mn8p0oq8fet0rnkvorj0tl3.apps.googleusercontent.com</string>
     <string-array name="status_options">
         <item>Đang bán</item>
         <item>Đã bán</item>

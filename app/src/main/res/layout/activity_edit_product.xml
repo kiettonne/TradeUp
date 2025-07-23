@@ -11,8 +11,8 @@
 
         <ImageView
             android:id="@+id/productImage"
-            android:layout_width="164dp"
-            android:layout_height="147dp"
+            android:layout_width="217dp"
+            android:layout_height="226dp"
             android:layout_gravity="center"
             android:layout_marginBottom="10dp"
             android:scaleType="centerCrop"
@@ -55,8 +55,8 @@
             android:hint="Danh mục"
             tools:ignore="HardcodedText,Autofill,TextFields" />
 
-        <EditText
-            android:id="@+id/editCondition"
+        <Spinner
+            android:id="@+id/spinnerCondition"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="12dp"
@@ -67,7 +67,7 @@
         <Spinner
             android:id="@+id/spinnerStatus"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:entries="@array/status_options"
             android:padding="12dp" />
@@ -93,10 +93,18 @@
         <Button
             android:id="@+id/btnSave"
             android:layout_width="match_parent"
-            android:layout_height="75dp"
+            android:layout_height="wrap_content"
             android:backgroundTint="#F6AB66"
             android:text="Lưu thay đổi"
             tools:ignore="HardcodedText" />
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Xóa sản phẩm"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#D32F2F"
+            android:textColor="#FFFFFF" />
 
     </LinearLayout>
 </ScrollView>

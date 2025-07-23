@@ -19,8 +19,10 @@
             android:layout_width="match_parent"
             android:layout_height="240dp"
             android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_foreground"
             android:contentDescription="Ảnh sản phẩm"
-            android:background="#DDD" />
+            android:background="#DDD"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/detailTitle"
@@ -30,7 +32,8 @@
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginTop="16dp"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/detailPrice"
@@ -39,7 +42,8 @@
             android:text="100.000₫"
             android:textSize="18sp"
             android:textColor="#FF5722"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="8dp"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/detailDesc"
@@ -48,7 +52,8 @@
             android:text="Mô tả sản phẩm..."
             android:textSize="16sp"
             android:layout_marginTop="12dp"
-            android:textColor="#444" />
+            android:textColor="#444"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/detailLocation"
@@ -57,7 +62,8 @@
             android:text="Vị trí: Hồ Chí Minh"
             android:layout_marginTop="10dp"
             android:textSize="15sp"
-            android:textColor="#666" />
+            android:textColor="#666"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/detailCondition"
@@ -66,7 +72,8 @@
             android:text="Tình trạng: Mới"
             android:layout_marginTop="6dp"
             android:textSize="15sp"
-            android:textColor="#666" />
+            android:textColor="#666"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/detailTags"
@@ -75,7 +82,17 @@
             android:text="Tags: điện thoại, Samsung"
             android:layout_marginTop="6dp"
             android:textSize="15sp"
-            android:textColor="#666" />
+            android:textColor="#666"
+            tools:ignore="HardcodedText" />
+        <Button
+            android:id="@+id/btnEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chỉnh sửa sản phẩm"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#F6AB66"
+            android:textColor="@android:color/white"
+            tools:ignore="HardcodedText" />
 
     </LinearLayout>
 </ScrollView>

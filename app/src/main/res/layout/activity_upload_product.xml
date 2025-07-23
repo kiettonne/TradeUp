@@ -11,11 +11,11 @@
 
         <ImageView
             android:id="@+id/productImage"
-            android:layout_width="194dp"
-            android:layout_height="184dp"
+            android:layout_width="171dp"
+            android:layout_height="134dp"
+            android:layout_gravity="center"
             android:layout_marginBottom="10dp"
             android:scaleType="centerCrop"
-            android:layout_gravity="center"
             android:src="@drawable/ic_launcher_foreground"
             tools:ignore="ContentDescription" />
 
@@ -31,6 +31,7 @@
             android:id="@+id/editPrice"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:inputType="number"
             android:padding="12dp"
             android:layout_marginBottom="10dp"
             android:hint="Giá"
@@ -57,6 +58,13 @@
             android:layout_width="379dp"
             android:layout_height="49dp"
             android:layout_marginBottom="10dp"/>
+
+        <EditText
+            android:id="@+id/editUsage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tình trạng sử dụng (ví dụ: mới 99%)"
+            tools:ignore="Autofill,HardcodedText,TextFields" />
 
         <EditText
             android:id="@+id/editLocation"

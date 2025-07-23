@@ -23,8 +23,6 @@ public class UserProfileActivity extends AppCompatActivity {
 
     private TextView nameView, emailView, bioView;
     private ImageView avatarView;
-    private Button btnEdit, btnLogout;
-
     private FirebaseUser currentUser;
     private DatabaseReference userRef;
 
@@ -37,8 +35,10 @@ public class UserProfileActivity extends AppCompatActivity {
         emailView = findViewById(R.id.email);
         bioView = findViewById(R.id.bio);
         avatarView = findViewById(R.id.avatar);
-        btnEdit = findViewById(R.id.btnEdit);
-        btnLogout = findViewById(R.id.btnLogout);
+        Button btnEdit = findViewById(R.id.btnEdit);
+        Button btnLogout = findViewById(R.id.btnLogout);
+        Button btnDeleteAccount = findViewById(R.id.btnDeleteAccount);
+        btnDeleteAccount.setOnClickListener(v -> confirmDeleteAccount());
 
         currentUser = FirebaseAuth.getInstance().getCurrentUser();
         if (currentUser == null) {
@@ -89,4 +89,32 @@ public class UserProfileActivity extends AppCompatActivity {
             }
         });
     }
+    private void confirmDeleteAccount() {
+        new android.app.AlertDialog.Builder(this)
+                .setTitle("Xác nhận xóa tài khoản")
+                .setMessage("Bạn có chắc chắn muốn xóa tài khoản này? Hành động này không thể hoàn tác.")
+                .setPositiveButton("Xóa", (dialog, which) -> deleteAccount())
+                .setNegativeButton("Hủy", null)
+                .show();
+    }
+    private void deleteAccount() {
+        String uid = currentUser.getUid();
+
+        FirebaseDatabase.getInstance().getReference("users").child(uid).removeValue()
+                .addOnSuccessListener(unused -> {
+                    currentUser.delete().addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(this, "Tài khoản đã bị xóa", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(this, LoginChoiceActivity.class));
+                            finish();
+                        } else {
+                            Toast.makeText(this, "Lỗi khi xóa tài khoản", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                })
+                .addOnFailureListener(e -> {
+                    Toast.makeText(this, "Lỗi khi xóa dữ liệu người dùng", Toast.LENGTH_SHORT).show();
+                });
+    }
+
 }

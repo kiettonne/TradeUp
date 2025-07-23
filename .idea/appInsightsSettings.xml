@@ -9,9 +9,9 @@
               <option name="connection">
                 <ConnectionSetting>
                   <option name="appId" value="com.example.tradeup" />
-                  <option name="mobileSdkAppId" value="1:136936521853:android:d8155df5229fe5ebcd7114" />
-                  <option name="projectId" value="fir-9c49c" />
-                  <option name="projectNumber" value="136936521853" />
+                  <option name="mobileSdkAppId" value="1:985095044874:android:c29d6c87ae858ed59744f3" />
+                  <option name="projectId" value="appfood-a710c" />
+                  <option name="projectNumber" value="985095044874" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

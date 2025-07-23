@@ -1,27 +1,37 @@
 {
   "project_info": {
-    "project_number": "136936521853",
-    "firebase_url": "https://fir-9c49c-default-rtdb.firebaseio.com",
-    "project_id": "fir-9c49c",
-    "storage_bucket": "fir-9c49c.firebasestorage.app"
+    "project_number": "985095044874",
+    "firebase_url": "https://appfood-a710c-default-rtdb.firebaseio.com",
+    "project_id": "appfood-a710c",
+    "storage_bucket": "appfood-a710c.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:136936521853:android:d8155df5229fe5ebcd7114",
+        "mobilesdk_app_id": "1:985095044874:android:c29d6c87ae858ed59744f3",
         "android_client_info": {
           "package_name": "com.example.tradeup"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "985095044874-bo0gj7eoido6s0gmvfl5je2du1m6ijqq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyCYV092HDe5EzTOGXBCNqoMbqT8CQM-wBU"
+          "current_key": "AIzaSyBizz2qS5SrDImJmGprZet7KyT-6UgVAo4"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "985095044874-bo0gj7eoido6s0gmvfl5je2du1m6ijqq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

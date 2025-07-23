@@ -42,7 +42,7 @@ dependencies {
     implementation(libs.firebase.storage)
     annotationProcessor ("com.github.bumptech.glide:compiler:4.16.0")
 //import firebase
-    implementation(platform("com.google.firebase:firebase-bom:33.15.0"))
+    implementation(platform("com.google.firebase:firebase-bom:33.16.0"))
     implementation("com.google.firebase:firebase-analytics")
     implementation ("com.google.firebase:firebase-auth")
 //connect login with Google

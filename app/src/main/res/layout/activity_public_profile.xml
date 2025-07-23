@@ -14,7 +14,6 @@
         android:gravity="center_horizontal"
         android:paddingBottom="24dp">
 
-        <!-- Avatar -->
         <ImageView
             android:id="@+id/avatar"
             android:layout_width="120dp"

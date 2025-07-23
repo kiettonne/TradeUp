@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -22,6 +22,10 @@
         <activity android:name=".ui.profile.UpdateProfileActivity"/>
         <activity android:name=".ui.profile.PublicProfileActivity"/>
         <activity android:name=".ui.product.EditProductActivity"/>
+        <activity android:name=".ui.product.ProductDetailActivity"/>
+        <activity android:name=".ui.product.ProductListActivity"/>
+        <activity android:name=".ui.product.UserProductListActivity"/>
+
         <activity
             android:name=".ui.main.MainActivity"
             android:exported="true">
@@ -38,4 +42,7 @@
     </application>
     <uses-permission android:name="android.permission.INTERNET"
         tools:ignore="ManifestOrder" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"
+        tools:ignore="CoarseFineLocation" />
 </manifest>

@@ -30,7 +30,8 @@
             android:hint="Tên người dùng"
             android:padding="16dp"
             android:background="@drawable/input_field_bg"
-            android:layout_marginBottom="12dp" />
+            android:layout_marginBottom="12dp"
+            tools:ignore="Autofill,HardcodedText,TextFields" />
 
         <EditText
             android:id="@+id/editBio"
@@ -39,7 +40,8 @@
             android:hint="Tiểu sử"
             android:padding="16dp"
             android:background="@drawable/input_field_bg"
-            android:layout_marginBottom="20dp" />
+            android:layout_marginBottom="20dp"
+            tools:ignore="HardcodedText" />
 
         <Button
             android:id="@+id/btnSave"
@@ -47,6 +49,7 @@
             android:layout_height="wrap_content"
             android:text="Lưu thay đổi"
             android:backgroundTint="#4CAF50"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            tools:ignore="HardcodedText" />
     </LinearLayout>
 </ScrollView>

@@ -36,7 +36,7 @@ public class UserProductListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_product_list);
 
-        RecyclerView recyclerView = findViewById(R.id.recyclerViewUserProducts);
+        RecyclerView recyclerView = findViewById(R.id.userProductRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         productList = new ArrayList<>();

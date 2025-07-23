@@ -1,13 +1,12 @@
 package com.example.tradeup.adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.bumptech.glide.Glide;
 import com.example.tradeup.R;
 import com.example.tradeup.data.model.Product;
@@ -16,62 +15,63 @@ import java.util.List;
 
 public class ProductManageAdapter extends RecyclerView.Adapter<ProductManageAdapter.ManageViewHolder> {
 
-    private List<Product> products;
-    private OnItemClickListener listener;
+    private Context context;
+    private List<Product> productList;
+    private OnProductManageListener listener;
 
-    public interface OnItemClickListener {
-        void onEditClick(Product product);
-        void onDeleteClick(Product product);
-        void onMarkSoldClick(Product product);
+    public interface OnProductManageListener {
+        void onEdit(Product product);
+        void onDelete(Product product);
     }
 
-    public ProductManageAdapter(List<Product> products, OnItemClickListener listener) {
-        this.products = products;
+    public ProductManageAdapter(Context context, List<Product> productList, OnProductManageListener listener) {
+        this.context = context;
+        this.productList = productList;
         this.listener = listener;
     }
 
     @NonNull
     @Override
     public ManageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_manage_product, parent, false);
-        return new ManageViewHolder(v);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_manage_product, parent, false);
+        return new ManageViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ManageViewHolder holder, int position) {
-        Product p = products.get(position);
-        holder.title.setText(p.getTitle());
-        holder.price.setText(p.getPrice() + "₫");
-        holder.status.setText(p.getStatus() != null ? p.getStatus() : "Đang bán");
+        Product product = productList.get(position);
+        holder.title.setText(product.getTitle());
+        holder.status.setText(product.getStatus());
 
-        if (p.getImages() != null && !p.getImages().isEmpty()) {
-            Glide.with(holder.itemView.getContext()).load(p.getImages().get(0)).into(holder.image);
+        if (product.getImages() != null && !product.getImages().isEmpty()) {
+            Glide.with(context)
+                    .load(product.getImages().get(0))
+                    .placeholder(R.drawable.avatar_border)
+                    .error(R.drawable.ic_launcher_foreground)
+                    .into(holder.image);
         }
 
-        holder.btnEdit.setOnClickListener(v -> listener.onEditClick(p));
-        holder.btnDelete.setOnClickListener(v -> listener.onDeleteClick(p));
-        holder.btnMarkSold.setOnClickListener(v -> listener.onMarkSoldClick(p));
+        holder.btnEdit.setOnClickListener(v -> listener.onEdit(product));
+        holder.btnDelete.setOnClickListener(v -> listener.onDelete(product));
     }
 
     @Override
     public int getItemCount() {
-        return products.size();
+        return productList.size();
     }
 
-    static class ManageViewHolder extends RecyclerView.ViewHolder {
-        TextView title, price, status;
+    public static class ManageViewHolder extends RecyclerView.ViewHolder {
+        TextView title, status;
         ImageView image;
-        Button btnEdit, btnDelete, btnMarkSold;
+        Button btnEdit, btnDelete;
 
         public ManageViewHolder(@NonNull View itemView) {
             super(itemView);
-            title = itemView.findViewById(R.id.manageProductTitle);
-            price = itemView.findViewById(R.id.manageProductPrice);
-            status = itemView.findViewById(R.id.manageProductStatus);
-            image = itemView.findViewById(R.id.manageProductImage);
+            title = itemView.findViewById(R.id.manageTitle);
+            status = itemView.findViewById(R.id.manageStatus);
+            image = itemView.findViewById(R.id.manageImage);
             btnEdit = itemView.findViewById(R.id.btnEditProduct);
             btnDelete = itemView.findViewById(R.id.btnDeleteProduct);
-            btnMarkSold = itemView.findViewById(R.id.btnMarkAsSold);
         }
     }
 }
